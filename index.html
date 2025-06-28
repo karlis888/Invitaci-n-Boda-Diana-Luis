@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Invitación de Boda</title>
+  <style>
+    body {
+      background: #fff8f0;
+      font-family: 'Georgia', serif;
+      text-align: center;
+      padding: 100px 20px;
+      color: #5a3e36;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background-color: #d9a066;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #b87b3e;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>¡Estás invitad@ a nuestra boda!</h1>
+  <p>Haz clic para ver la invitación</p>
+
+  <button onclick="iniciarInvitacion()">Ver invitación</button>
+
+  <audio id="musica" autoplay loop>
+    <source src="https://raw.githubusercontent.com/karlis888/mi-musica/main/Gema.mp3" type="audio/mpeg">
+    Tu navegador no soporta el audio.
+  </audio>
+
+  <script>
+    function iniciarInvitacion() {
+      document.getElementById('musica').play();
+      window.open('https://paraboda.my.canva.site/invitaci-n-de-boda-diana-luis', '_blank');
+    }
+  </script>
+
+</body>
+</html>
