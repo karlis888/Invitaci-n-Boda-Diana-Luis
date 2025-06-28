@@ -2,14 +2,18 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Invitación de Boda</title>
+  <title>Diana & Luis</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
-      background: #fff8f0;
       font-family: 'Georgia', serif;
+      background-color: #ffffff;
+      background-image: url('https://i.imgur.com/7u3n1kW.jpg'); /* Fondo floral suave */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       color: #5a3e36;
     }
 
@@ -20,33 +24,66 @@
       align-items: center;
       height: 100%;
       text-align: center;
+      background-color: rgba(255, 255, 255, 0.75);
       padding: 40px 20px;
     }
 
     h1 {
-      font-size: 48px;
+      font-size: 20px;
+      margin-bottom: 40px;
+      font-weight: normal;
+    }
+
+    .sello-con-texto {
+      position: relative;
+      width: 200px;
+      height: 200px;
       margin-bottom: 20px;
     }
 
-    p {
-      font-size: 24px;
-      margin-bottom: 40px;
-    }
-
-    button {
-      background-color: #d9a066;
+    .sello {
+      width: 160px;
+      height: 160px;
+      background: radial-gradient(circle at 30% 30%, #d9a066, #b87b3e);
       color: white;
-      border: none;
-      padding: 25px 60px;
-      font-size: 26px;
-      border-radius: 14px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      font-weight: bold;
       cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: inset -4px -4px 10px rgba(0,0,0,0.2),
+                  inset 4px 4px 10px rgba(255,255,255,0.3),
+                  0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
     }
 
-    button:hover {
-      background-color: #b87b3e;
-      transform: scale(1.05);
+    .sello:active {
+      transform: scale(0.96);
+      box-shadow: inset 2px 2px 6px rgba(0,0,0,0.3),
+                  inset -2px -2px 6px rgba(255,255,255,0.2);
+    }
+
+    .texto-circular {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      pointer-events: none;
+    }
+
+    .texto-circular svg {
+      width: 100%;
+      height: 100%;
     }
 
     audio {
@@ -58,8 +95,23 @@
 
   <div class="contenedor">
     <h1>¡Estás invitad@ a nuestra boda!</h1>
-    <p>Haz clic para ver la invitación</p>
-    <button onclick="iniciarInvitacion()">Entrar a la invitación</button>
+
+    <div class="sello-con-texto">
+      <div class="texto-circular">
+        <svg viewBox="0 0 200 200">
+          <defs>
+            <path id="circlePath" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/>
+          </defs>
+          <text font-size="12" fill="#5a3e36">
+            <textPath xlink:href="#circlePath" startOffset="50%" text-anchor="middle">
+              Haz clic para ver la invitación
+            </textPath>
+          </text>
+        </svg>
+      </div>
+
+      <div class="sello" onclick="iniciarInvitacion()">Diana & Luis</div>
+    </div>
   </div>
 
   <audio id="musica" autoplay loop>
