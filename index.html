@@ -2,17 +2,19 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Invitación Diana & Luis</title>
+  <title>Invitación Diana & Luis E.</title>
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
-      background-image: url('Clic aquí para abrir.png');
+      height: 100%;
+      background-color: #fdfaf6;
+      background-image: url('Clic%20aqu%C3%AD%20para%20abrir.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      height: 100vh;
     }
+
     .sello-zona {
       position: absolute;
       top: 50%;
@@ -22,23 +24,27 @@
       transform: translate(-50%, -50%);
       cursor: pointer;
     }
+
     audio {
       display: none;
     }
   </style>
 </head>
 <body>
+
   <div class="sello-zona" onclick="abrirInvitacion()" title="Haz clic aquí para abrir"></div>
 
   <audio id="musica" autoplay loop>
-    <source src="musica.mp3" type="audio/mp3">
+    <source src="https://raw.githubusercontent.com/karlis888/mi-musica/main/Gema.mp3" type="audio/mpeg">
     Tu navegador no soporta audio.
   </audio>
 
   <script>
     function abrirInvitacion() {
-      window.open('https://www.canva.com/design/DAE5t6X8Q8k/view', '_blank');
+      document.getElementById('musica').play();
+      window.open('https://paraboda.my.canva.site/invitaci-n-de-boda-diana-luis', '_blank');
     }
   </script>
+
 </body>
 </html>
