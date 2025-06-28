@@ -4,32 +4,49 @@
   <meta charset="UTF-8">
   <title>Invitación de Boda</title>
   <style>
-    body {
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
       background: #fff8f0;
       font-family: 'Georgia', serif;
-      text-align: center;
-      padding: 100px 20px;
       color: #5a3e36;
     }
 
+    .contenedor {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
     h1 {
-      font-size: 36px;
+      font-size: 48px;
       margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 24px;
+      margin-bottom: 40px;
     }
 
     button {
       background-color: #d9a066;
       color: white;
       border: none;
-      padding: 15px 30px;
-      font-size: 18px;
-      border-radius: 8px;
+      padding: 25px 60px;
+      font-size: 26px;
+      border-radius: 14px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
     button:hover {
       background-color: #b87b3e;
+      transform: scale(1.05);
     }
 
     audio {
@@ -39,10 +56,11 @@
 </head>
 <body>
 
-  <h1>¡Estás invitad@ a nuestra boda!</h1>
-  <p>Haz clic para ver la invitación</p>
-
-  <button onclick="iniciarInvitacion()">Ver invitación</button>
+  <div class="contenedor">
+    <h1>¡Estás invitad@ a nuestra boda!</h1>
+    <p>Haz clic para ver la invitación</p>
+    <button onclick="iniciarInvitacion()">Entrar a la invitación</button>
+  </div>
 
   <audio id="musica" autoplay loop>
     <source src="https://raw.githubusercontent.com/karlis888/mi-musica/main/Gema.mp3" type="audio/mpeg">
